@@ -1,15 +1,13 @@
-package uaphr;
-public class Employee {
+package uap.hr;
+public abstract class Employee {
     private String name,id,designation;
-    private double salary;
-    public Employee(String name,String id,String designation,double salary){
+    public Employee(String name,String id,String designation){
         this.name = name;
         this.id = id;
         this.designation = designation;
-        this.salary = salary;
     }
-    public void increaseSalary(double amt){
-        salary += amt;
+    public void display(){
+        System.out.print("Name: "+name+"; Id: "+id+"; Designation: "+designation+" ");
     }
     public void setName(String name){
         this.name = name;
@@ -20,9 +18,6 @@ public class Employee {
      public void setDesignation(String designation){
         this.designation = designation;
     }
-     public void setSalary(double salary){
-        this.salary = salary;
-    }
     public String getName(){
         return name;
     }
@@ -32,10 +27,6 @@ public class Employee {
     public String getId(){
         return id;
     }
-    public double getSalary(){
-        return salary;
-    }
-    public void display(){
-        System.out.println("Name: "+name+"; Id: "+id+"; Designation: "+designation+"; Salary: "+salary+";");
-    }
+    public abstract double getSalary();
+    public abstract void increaseSalary(double amt);
 }

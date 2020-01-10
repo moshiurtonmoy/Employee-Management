@@ -1,19 +1,30 @@
-package uaphr;
+package uap.hr;
 import java.util.ArrayList;
+
 public class UapCse {
-    ArrayList<Employee> employees = new ArrayList<Employee>();
-    String name;
+    public String name;
+    ArrayList<Employee>employees  = new ArrayList<Employee>();
     public UapCse(String name){
         this.name = name;
+        System.out.println("*****Welcome to the dept. of CSE*****");
     }
     private void addNewEmployee(Employee e){
         employees.add(e);
+        System.out.println("New employee has been employed!!");
     }
-    public void addNewEmployee(String nm,String id,String des,double sal){
-        Employee e = new Employee(nm,id,des,sal);
+    public void addNewEmployee(String n,String i,String d,double s){
+        SalariedEmployee e = new SalariedEmployee(n,i,d,s);
         addNewEmployee(e);
     }
-    private Employee findEmployee(String id){
+    public void addNewEmployee(String n,String i,String d,double hr,int hw){
+        HourlyEmpployee e = new HourlyEmpployee(n,i,d,hr,hw);
+        addNewEmployee(e);
+    }
+    public void addNewEmployee(String n,String i,String d,double p,double s){
+        CommissionEmployee e = new CommissionEmployee(n,i,d,p,s);
+        addNewEmployee(e);
+    }
+    public Employee findEmployee(String id){
         for(Employee x : employees){
             if(x.getId().equals(id))
                 return x;
@@ -21,7 +32,7 @@ public class UapCse {
         System.out.println("Employee not found!");
         return null;
     }
-   public void increaseSalary(String id,double amt){
+    public void increaseSalary(String id,double amt){
         Employee x = findEmployee(id);
         if(x!=null){
             x.increaseSalary(amt);
@@ -29,7 +40,7 @@ public class UapCse {
         else
         System.out.println("Employee not found!");
    }
-   public double getSalary(String id){
+    public double getSalary(String id){
        Employee x = findEmployee(id);
         if(x!=null){
             return x.getSalary();
