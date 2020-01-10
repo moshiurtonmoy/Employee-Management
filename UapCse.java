@@ -32,7 +32,7 @@ public class UapCse {
         System.out.println("Employee not found!");
         return null;
     }
-    public void increaseSalary(String id,double amt){
+    public void increaseSalary(String id,double amt) throws InvalidSalaryException{
         Employee x = findEmployee(id);
         if(x!=null){
             x.increaseSalary(amt);

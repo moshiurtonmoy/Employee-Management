@@ -11,7 +11,9 @@ public class HourlyEmpployee extends Employee{
         return hourlyRate*hourlyWorked;
     }
     @Override
-    public void increaseSalary(double amt){
+   public void increaseSalary(double amt) throws InvalidSalaryException{
+        if(hourlyRate+amt>500)
+            throw new InvalidSalaryException("Hourly rate can’t be more than 500");
         hourlyRate += amt; 
     }
     @Override

@@ -9,8 +9,16 @@ public class SalariedEmployee extends Employee {
     public double getSalary(){
         return monthlySalary;
     }
+
+    /**
+     *
+     * @param amt
+     * @throws InvalidSalaryException
+     */
     @Override
-    public void increaseSalary(double amt){
+    public void increaseSalary(double amt) throws InvalidSalaryException{
+        if(amt<=0)
+            throw new InvalidSalaryException("Increase amount should be a positive number.");
         monthlySalary += amt;
     }
     @Override

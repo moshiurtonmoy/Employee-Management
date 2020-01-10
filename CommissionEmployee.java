@@ -10,7 +10,9 @@ public class CommissionEmployee extends Employee{
         return commission*_sale;
     }
     @Override
-    public void increaseSalary(double amt){
+    public void increaseSalary(double amt) throws InvalidSalaryException{
+        if(commission+amt>.30)
+            throw new InvalidSalaryException("Commission cannot be more than 30%");
         commission += amt; 
     }
     @Override

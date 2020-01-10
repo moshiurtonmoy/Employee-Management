@@ -1,5 +1,6 @@
 package uap.hr;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class UAP {
     public static void main(String[] args) {
         UapCse myUap = new UapCse("CSE");
@@ -59,7 +60,14 @@ public class UAP {
                 System.out.println("Enter employee's ID & the amount need to be raised: ");
                 String i = scan.next();
                 double d = scan.nextDouble();
-                myUap.increaseSalary(i, d);
+                try{
+                    myUap.increaseSalary(i, d);
+                }
+                catch(InvalidSalaryException e){
+                    JOptionPane.showMessageDialog(null,e.getMessage());
+//                    System.out.println(e.getMessage());
+//                    e.printStackTrace();
+                }
             }
             else if(op==4){
                 System.out.println("Enter employee's ID: ");
