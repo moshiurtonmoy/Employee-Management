@@ -1,4 +1,4 @@
-package uap.hr;
+
 public abstract class Employee {
     private String name,id,designation;
     public Employee(String name,String id,String designation){
@@ -12,10 +12,10 @@ public abstract class Employee {
     public void setName(String name){
         this.name = name;
     }
-     public void setId(String id){
+    public void setId(String id){
         this.id = id;
     }
-     public void setDesignation(String designation){
+    public void setDesignation(String designation){
         this.designation = designation;
     }
     public String getName(){

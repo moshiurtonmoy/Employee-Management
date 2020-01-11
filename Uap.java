@@ -1,7 +1,7 @@
-package uap.hr;
+
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-public class UAP {
+public class Uap {
     public static void main(String[] args) {
         UapCse myUap = new UapCse("CSE");
         Scanner scan = new Scanner(System.in);
@@ -80,7 +80,7 @@ public class UAP {
             else if(op==0){
                 break;
             }
-            else 
+            else
                 System.out.println("Wrong key pressed! Please try again.");
         }
     }

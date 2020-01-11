@@ -1,9 +1,8 @@
-package uap.hr;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 public class UapCse {
     public String name;
-    ArrayList<Employee>employees  = new ArrayList<Employee>();
+    ArrayList<Employee>employees  = new ArrayList<>();
     public UapCse(String name){
         this.name = name;
         System.out.println("*****Welcome to the dept. of CSE*****");
@@ -17,7 +16,7 @@ public class UapCse {
         addNewEmployee(e);
     }
     public void addNewEmployee(String n,String i,String d,double hr,int hw){
-        HourlyEmpployee e = new HourlyEmpployee(n,i,d,hr,hw);
+        HourlyEmployee e = new HourlyEmployee(n,i,d,hr,hw);
         addNewEmployee(e);
     }
     public void addNewEmployee(String n,String i,String d,double p,double s){
@@ -38,25 +37,25 @@ public class UapCse {
             x.increaseSalary(amt);
         }
         else
-        System.out.println("Employee not found!");
-   }
+            System.out.println("Employee not found!");
+    }
     public double getSalary(String id){
-       Employee x = findEmployee(id);
+        Employee x = findEmployee(id);
         if(x!=null){
             return x.getSalary();
-       }
-       System.out.println("Employee not found!");
-       return -1;
-   }
-   public void display(String id){
-       Employee x = findEmployee(id);
+        }
+        System.out.println("Employee not found!");
+        return -1;
+    }
+    public void display(String id){
+        Employee x = findEmployee(id);
         if(x!=null){
             x.display();
         }
-   }
-   public void display(){
-       for(Employee x : employees){
-           x.display();
-       }
-   }
+    }
+    public void display(){
+        for(Employee x : employees){
+            x.display();
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package uap.hr;
+
 public class SalariedEmployee extends Employee {
     public double monthlySalary;
     public SalariedEmployee(String name,String id,String designation,Double monthlySalary){
@@ -9,12 +9,6 @@ public class SalariedEmployee extends Employee {
     public double getSalary(){
         return monthlySalary;
     }
-
-    /**
-     *
-     * @param amt
-     * @throws InvalidSalaryException
-     */
     @Override
     public void increaseSalary(double amt) throws InvalidSalaryException{
         if(amt<=0)

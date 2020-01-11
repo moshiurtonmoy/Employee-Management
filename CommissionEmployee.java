@@ -1,4 +1,3 @@
-package uap.hr;
 public class CommissionEmployee extends Employee{
     public double commission,sale;
     public CommissionEmployee(String name,String id,String designation,double commission,double sale){
@@ -13,7 +12,7 @@ public class CommissionEmployee extends Employee{
     public void increaseSalary(double amt) throws InvalidSalaryException{
         if(commission+amt>.30)
             throw new InvalidSalaryException("Commission cannot be more than 30%");
-        commission += amt; 
+        commission += amt;
     }
     @Override
     public double getSalary(){
