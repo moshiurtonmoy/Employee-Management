@@ -1,9 +1,11 @@
-
-public class SalariedEmployee extends Employee {
+public class SalariedEmployee extends Employee{
+    
     public double monthlySalary;
+    
     public SalariedEmployee(String name,String id,String designation,Double monthlySalary){
         super(name,id,designation);
         this.monthlySalary = monthlySalary;
+        
     }
     @Override
     public double getSalary(){
@@ -15,6 +17,7 @@ public class SalariedEmployee extends Employee {
             throw new InvalidSalaryException("Increase amount should be a positive number.");
         monthlySalary += amt;
     }
+    
     @Override
     public void display(){
         super.display();
