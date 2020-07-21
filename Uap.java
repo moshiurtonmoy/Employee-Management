@@ -6,6 +6,7 @@ public class Uap {
         UapCse myUap = new UapCse("CSE");
         Scanner scan = new Scanner(System.in);
         UI choice = new UI();
+        OperacionesEmployee Oemployee = new OperacionesEmployee();     
         while(true){
             choice.option();
             int op = scan.nextInt();
@@ -20,7 +21,8 @@ public class Uap {
                         String i = scan.nextLine();
                         String d = scan.nextLine();
                         double s = scan.nextDouble();
-                        myUap.addNewEmployee(n,i,d,s);
+                        SalariedEmployee e = new SalariedEmployee(n,i,d,s);
+                        Oemployee.addNewEmployee(e);
                         break;
                     }
                     else if(subOp==2){
@@ -31,7 +33,8 @@ public class Uap {
                         String d = scan.nextLine();
                         double hr = scan.nextDouble();
                         int hw = scan.nextInt();
-                        myUap.addNewEmployee(n,i,d,hr,hw);
+                        HourlyEmployee e = new HourlyEmployee(n,i,d,hr,hw);
+                        Oemployee.addNewEmployee(e);
                         break;
                     }
                     else if(subOp==3){
@@ -42,7 +45,8 @@ public class Uap {
                         String d = scan.nextLine();
                         double c = scan.nextDouble();
                         double s = scan.nextDouble();
-                        myUap.addNewEmployee(n,i,d,c,s);
+                        CommissionEmployee e = new CommissionEmployee(n,i,d,c,s);
+                        Oemployee.addNewEmployee(e);
                         break;
                     }
                     else
@@ -52,7 +56,7 @@ public class Uap {
             else if(op==2){
                 System.out.println("Enter employee's ID: ");
                 String i = scan.next();
-                double s = myUap.getSalary(i);
+                double s = Oemployee.getSalary(i);
                 if(s!=-1)
                     System.out.println(s);
             }
@@ -61,7 +65,7 @@ public class Uap {
                 String i = scan.next();
                 double d = scan.nextDouble();
                 try{
-                    myUap.increaseSalary(i, d);
+                    Oemployee.increaseSalary(i, d);
                 }
                 catch(InvalidSalaryException e){
                     JOptionPane.showMessageDialog(null,e.getMessage());
@@ -72,10 +76,10 @@ public class Uap {
             else if(op==4){
                 System.out.println("Enter employee's ID: ");
                 String i = scan.next();
-                myUap.display(i);
+                Oemployee.display(i);
             }
             else if(op==5){
-                myUap.display();
+                Oemployee.display();
             }
             else if(op==0){
                 break;
